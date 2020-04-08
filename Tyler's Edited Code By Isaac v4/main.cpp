@@ -208,7 +208,7 @@ int main()
 	Trainer misty("Misty", scizor, jigglypuff, deoxys);
 
 
-    std::cout<<"\nCongratulatios "<<Battle(ash,misty).getName()<<" you have won the battle!"<<std::endl;
+    std::cout<<"\nCongratulations "<<Battle(ash,misty).getName()<<" you have won the battle!"<<std::endl;
 
     return 0;
 }

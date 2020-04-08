@@ -300,7 +300,7 @@ void Pokemon::addChMoves(const ChargeMoves& chMove1, const ChargeMoves& chMove2)
 //Changes by Tyler
 //Purpose: Calculates Multiplier using 2D array
 //Precondition: Pokemon as calling object a target pokemon of pokemon class and the type of the attack
-//Postcondition: float for multipler to be applied to damage
+//Postcondition: float for multiplier to be applied to damage
 float Pokemon::GetMultiplier(Pokemon TargetPokemon, int AttackType)
 {
     float Multiplier = 1;

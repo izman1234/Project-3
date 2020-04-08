@@ -89,7 +89,7 @@ private:
 	0 = Bug
 	1 = Dark
 	2 = Dragon
-	3 = ElectricpType1
+	3 = Electric
 	4 = Fairy
 	5 = Fight
 	6 = Fire

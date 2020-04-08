@@ -61,40 +61,40 @@ Trainer Battle(Trainer& Player1,Trainer& Player2)
     Player1.setActivePokemon();//select first poke to use
     Player2.setActivePokemon();//select first poke to use
 
-    while(Player1.hasConsiousPokemon() && Player2.hasConsiousPokemon())//while loop to continue battle untill one trainer no longer has a concious Poke
+    while(Player1.hasConsiousPokemon() && Player2.hasConsiousPokemon())//while loop to continue battle until one trainer no longer has a conscious Poke
     {
     if(Player1.getownedPokemon()[Player1.getselectedpokemon()].getHP()<=0)//checks if current pokemon HP>0 if not call setActive pokemon to select different pokemon with >0 HP
         Player1.setActivePokemon();
     if(Player2.getownedPokemon()[Player2.getselectedpokemon()].getHP()<=0)//Performs same task of checking if HP > 0 for player 2
         Player2.setActivePokemon();
 
-    std::cout<<"-------------------------------------------------------------------------"<<std::endl;//line seperating player1s action
+    std::cout<<"-------------------------------------------------------------------------"<<std::endl;//line separating player1s action
     if(Player1.ownedPokemon[Player1.selectedpokemon].getCurrentEnergy() >= abs(Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(0).getChargeEnergy()) || Player1.ownedPokemon[Player1.selectedpokemon].getCurrentEnergy() >= abs(Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(1).getChargeEnergy()))//if check if current envegy greater than required energy for fast attack 1
     {
         std::vector<int> possibleSelection;//variable to store possible moves a pokemon can perform with current energy
         std::cout<<Player1.getName()<<" You have enough Energy to perform a charge attack"<<std::endl;//inform player they can perform a charge move
         std::cout<<"\t0 - Fast attack "<<Player1.ownedPokemon[Player1.selectedpokemon].getFMove().getName()<<" (Delta Energy "<<Player1.ownedPokemon[Player1.selectedpokemon].getFMove().getEnergyDelta()<<")"<<std::endl;
         possibleSelection.push_back(0);//push back 0 for fast move case
-        if(Player1.ownedPokemon[Player1.selectedpokemon].getCurrentEnergy() >= abs(Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(0).getChargeEnergy()))//check if player1 pokemon has energy sufficeent to perform charge move 1
+        if(Player1.ownedPokemon[Player1.selectedpokemon].getCurrentEnergy() >= abs(Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(0).getChargeEnergy()))//check if player1 pokemon has energy sufficient to perform charge move 1
         {
             std::cout<<"\t1 - Charge attack 1 :"<<Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(0).getName()<<" (Required Energy "<<Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(0).getChargeEnergy()<<")"<<std::endl;
             possibleSelection.push_back(1);//push back 1 for charge move 1
         }
-        if(Player1.ownedPokemon[Player1.selectedpokemon].getCurrentEnergy() >= abs(Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(1).getChargeEnergy()))//check if player 1 pokemon has envergy sufficent for charge move 2
+        if(Player1.ownedPokemon[Player1.selectedpokemon].getCurrentEnergy() >= abs(Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(1).getChargeEnergy()))//check if player 1 pokemon has energy sufficient for charge move 2
         {
             std::cout<<"\t2 - Charge attack 2 :"<<Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(1).getName()<<" (Required Energy "<<Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(1).getChargeEnergy()<<")"<<std::endl;
             possibleSelection.push_back(2);//push back 2 for charge move 2
         }
 
         std::cout<<"select what move you wish to perform:";//prompt user to select a move form list provided
-        std::cin>>Player1MoveSelection;//enter int repersenting move
+        std::cin>>Player1MoveSelection;//enter int representing move
         while(!std::count(possibleSelection.begin(),possibleSelection.end(),Player1MoveSelection))//check if move provided is in list of possible moves
         {
             std::cout<<"Index out of range select form provided list:";
             std::cin>>Player1MoveSelection;
         }//END of while loop checking if move selection is valid
-    }//end of if statement for determing next move
-    else//if player lacks enegy to perform either charge move defaults to using fast move
+    }//end of if statement for determining next move
+    else//if player lacks energy to perform either charge move defaults to using fast move
     {
         Player1MoveSelection = 0;//set to zero for fast attack
     }
@@ -106,12 +106,12 @@ Trainer Battle(Trainer& Player1,Trainer& Player2)
         std::cout<<Player1.ownedPokemon[Player1.selectedpokemon].getName()<<" is attacking with "<<Player1.ownedPokemon[Player1.selectedpokemon].getFMove().getName()<<std::endl;//
         PerformFastAttack(Player1,Player2);//performs fast move
         break;
-    case 1://case where selection = 1 perfroms charge move one
+    case 1://case where selection = 1 performs charge move one
         std::cout<<Player1.ownedPokemon[Player1.selectedpokemon].getName()<<" is attacking with ";
         std::cout<<Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(0).getName()<<std::endl;
         PerformChargeAttack(Player1,Player2,0);//perform charge attack 1
         break;
-    case 2://case where selection = 2 perfroms charge move two
+    case 2://case where selection = 2 performs charge move two
         std::cout<<Player1.ownedPokemon[Player1.selectedpokemon].getName()<<" is attacking with ";
         std::cout<<Player1.ownedPokemon[Player1.selectedpokemon].getChargemove(1).getName()<<std::endl;
         PerformChargeAttack(Player1,Player2,1);//perform charge move 2
@@ -122,7 +122,7 @@ Trainer Battle(Trainer& Player1,Trainer& Player2)
 
 
     std::this_thread::sleep_for(std::chrono::milliseconds(step/2));//causes program to stop for value of step milliseconds / 2 between each set of players moving
-    if (Player2.ownedPokemon[Player2.selectedpokemon].getHP()>0)//check if player 2 pokemon is concious after player ones attack
+    if (Player2.ownedPokemon[Player2.selectedpokemon].getHP()>0)//check if player 2 pokemon is conscious after player ones attack
     {
             std::cout<<"-------------------------------------------------------------------------"<<std::endl;
 
@@ -151,7 +151,7 @@ Trainer Battle(Trainer& Player1,Trainer& Player2)
                 std::cin>>Player2MoveSelection;
             }
         }
-        else//if player lacks enegy to perform either charge move defaults to using fast move
+        else//if player lacks energy to perform either charge move defaults to using fast move
         {
             Player2MoveSelection = 0;//set to zero for fast attack
         }
@@ -188,7 +188,7 @@ Trainer Battle(Trainer& Player1,Trainer& Player2)
 
 
     //code for declaring winner
-    if(Player1.hasConsiousPokemon())//checks if player one has any concious pokemon left
+    if(Player1.hasConsiousPokemon())//checks if player one has any conscious pokemon left
     {
         return Player1;//if this is true then he is the winner of battle
     }
@@ -201,7 +201,7 @@ Trainer Battle(Trainer& Player1,Trainer& Player2)
 /*
 Purpose: check if A trainer has a Poke with HP>0
 Precondition: Nothing
-Postcondition: true if atleast on pokemon is concious*/
+Postcondition: true if at least on pokemon is conscious*/
 bool Trainer::hasConsiousPokemon()
 {
     for(int i = 0; i<ownedPokemon.size(); i++)
@@ -255,7 +255,7 @@ int Trainer::getselectedpokemon()
     return selectedpokemon;
 }
 /*
-Purpose: Have attacking players currently selected pokemon perform the charge attack using provided index on the currenly selected poke of defending player
+Purpose: Have attacking players currently selected pokemon perform the charge attack using provided index on the currently selected poke of defending player
 Precondition: Attacking trainer defending trainer and index of the attacking players charge move list they wish to use
 Postcondition: if player shields reduce defending player shield count by one and reduce energy of attacking player ,
                 if player does not shield apply damage to defending pokemon reduce energy of attacking pokemon  */
@@ -263,10 +263,10 @@ bool PerformChargeAttack(Trainer& AttakingPlayer, Trainer& DefendingPlayer, int 
 {
     int damage = 0;
     float mult = 1;
-    std::string Decision = "n";//decision of user y if they wish to use sheild n if not defaults to n
-    if(DefendingPlayer.getShieldLeft()>0)//check id defender has any sheilds remaining
+    std::string Decision = "n";//decision of user y if they wish to use shield n if not defaults to n
+    if(DefendingPlayer.getShieldLeft()>0)//check id defender has any shields remaining
     {
-        std::cout<<DefendingPlayer.getName()<<" Do you want to use a sheild to block incoming charge attack you have "<<DefendingPlayer.getShieldLeft()<<" remaining (y/n):";
+        std::cout<<DefendingPlayer.getName()<<" Do you want to use a shield to block incoming charge attack you have "<<DefendingPlayer.getShieldLeft()<<" remaining (y/n):";
         std::cin>>Decision;
         while(Decision!="n" && Decision !="y")//checks if input Y or n if not ask to provide another input
         {
@@ -274,17 +274,17 @@ bool PerformChargeAttack(Trainer& AttakingPlayer, Trainer& DefendingPlayer, int 
             std::cin>>Decision;
         }
     }
-    if(Decision == "n")//if player chooses to use sheild
+    if(Decision == "n")//if player chooses to use shield
     {
         mult = AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].GetMultiplier(DefendingPlayer.ownedPokemon[DefendingPlayer.selectedpokemon]  ,  AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].getChargemove(ChargeAtttackIndex).getMoveType());
         float Catk = (AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].getBatk() + AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].getIatk()) * AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].getCPM(AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].getLvl());
         float Cdef = (DefendingPlayer.ownedPokemon[DefendingPlayer.selectedpokemon].getBdef()+DefendingPlayer.ownedPokemon[DefendingPlayer.selectedpokemon].getIdef()) * DefendingPlayer.ownedPokemon[DefendingPlayer.selectedpokemon].getCPM(DefendingPlayer.ownedPokemon[DefendingPlayer.selectedpokemon].getLvl());
         damage = floor(0.5 * AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].getChargemove(ChargeAtttackIndex).getChargeMoveBasePwr() * (Catk/Cdef) * mult) + 1;
-        DefendingPlayer.ownedPokemon[DefendingPlayer.selectedpokemon].calcHP(damage);//calculte damage done then apply it to defending pokemon
+        DefendingPlayer.ownedPokemon[DefendingPlayer.selectedpokemon].calcHP(damage);//calculate damage done then apply it to defending pokemon
     }
     else
     {
-        DefendingPlayer.reduceShieldAmount();//if player chooses to block reduce their sheild amount by one
+        DefendingPlayer.reduceShieldAmount();//if player chooses to block reduce their shield amount by one
     }
 
     AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].updateCurrentEnergy(AttakingPlayer.ownedPokemon[AttakingPlayer.selectedpokemon].getChargemove(ChargeAtttackIndex).getChargeEnergy());//reduce attacking poke energy
