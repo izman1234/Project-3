@@ -178,7 +178,7 @@ int main()
 	salamence.raiseCurrentEnergy(dragon_tail);
 	std::cout << salamence.getName() << " has " << salamence.getCurrentEnergy() << " energy." << std::endl;
 
-	// Using Energy Test
+    // Using Energy Test
 	std::cout << '\n' << "Using Energy Test:" << std::endl;
 	for (int i = 0; i < 20; ++i) {
 		squirtle.raiseCurrentEnergy(tackle);
@@ -188,21 +188,20 @@ int main()
 	squirtle.decreaseCurrentEnergy(aqua_tail);
 	std::cout << squirtle.getName() << " has " << squirtle.getCurrentEnergy() << " energy." << std::endl;
 
-	//start Ashley's Charge moves test 4/5/20
-  std::cout<< "\nCharge moves take Damage Test:" <<std::endl;
-  std::cout<< pikachu.getName()<<" has " << pikachu.getCurrentEnergy() << " energy." << std::endl;
-      for (int i = 0; i < 20; ++i) {
-		  pikachu.raiseCurrentEnergy(thunder_shock);
-      }
-  std::cout<< pikachu.getName()<<" has " << pikachu.getCurrentEnergy() << " energy." << std::endl;
-  std::cout<<pikachu.getName() << " powered " <<
-  discharge.getName() <<" to attack " << charmander.getName() <<std::endl;
+//start Ashley's Charge moves test 4/5/20
+    std::cout<< "\nCharge moves energy Test:" <<std::endl;
+    std::cout<< pikachu.getName()<<" has " << pikachu.getCurrentEnergy() << " energy." << std::endl;
+            for (int i = 0; i < 20; ++i) {
+            pikachu.raiseCurrentEnergy(thunder_shock);
+        }
+    std::cout<< pikachu.getName()<<" has " << pikachu.getCurrentEnergy() << " energy." << std::endl;
+    std::cout<<pikachu.getName() << " powered " <<
+    discharge.getName() <<" to attack " << charmander.getName() <<std::endl;
   //banana.takeDamage(discharge, apple, charmander ,pikachu);
   //TEST NOT WOKRING
-  pikachu.decreaseCurrentEnergy(discharge);
-  std::cout<< pikachu.getName()<<" has " << pikachu.getCurrentEnergy() << " energy." << std::endl;
-
-//end ashley's code
+    pikachu.decreaseCurrentEnergy(discharge);
+    std::cout<< pikachu.getName()<<" has " << pikachu.getCurrentEnergy() << " energy." << std::endl;
+    //end ashley's code
 
     Trainer trnrTEST;	//Test Trainer's default constructor
 	Trainer ash("Ash", lucario, zekrom, metagross); //Test initialization of a Trainer
