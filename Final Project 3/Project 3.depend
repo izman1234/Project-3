@@ -533,3 +533,41 @@
 	<conio.h>
 	<Windows.h>
 
+1586312297 source:d:\csc 275\tyler's edited code by isaac v4\src\chargemoves.cpp
+	"ChargeMoves.h"
+
+1586312297 d:\csc 275\tyler's edited code by isaac v4\include\chargemoves.h
+	<string>
+
+1586312297 source:d:\csc 275\tyler's edited code by isaac v4\src\fastmoves.cpp
+	"FastMoves.h"
+
+1586312297 d:\csc 275\tyler's edited code by isaac v4\include\fastmoves.h
+	<string>
+
+1586312297 source:d:\csc 275\tyler's edited code by isaac v4\src\pokemon.cpp
+	"Pokemon.h"
+	<math.h>
+
+1586312297 d:\csc 275\tyler's edited code by isaac v4\include\pokemon.h
+	<string>
+	"FastMoves.h"
+	"ChargeMoves.h"
+
+1586312297 source:d:\csc 275\tyler's edited code by isaac v4\src\trainer.cpp
+	"Trainer.h"
+	<iostream>
+	<algorithm>
+	<math.h>
+	<vector>
+
+1586312297 d:\csc 275\tyler's edited code by isaac v4\include\trainer.h
+	<vector>
+	"FastMoves.h"
+	"ChargeMoves.h"
+	"Pokemon.h"
+	<thread>
+	<chrono>
+	<conio.h>
+	<Windows.h>
+

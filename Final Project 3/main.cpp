@@ -1,6 +1,8 @@
 // Project2.cpp : This file contains the 'main' function. Program execution begins and ends there
 //Known limitations:
 //Cannot test taking damage outside of the battle function
+//This includes Charge moves and Fast moves
+//When a Pokemon's health is below 0 it still shows the negative HP instead of 0 HP
 /*
  *
  * Group members:
@@ -163,13 +165,13 @@ int main()
 	banana.reduceShieldAmount();
 	std::cout << banana.getName() << " has " << banana.getShieldLeft() << " shield(s) remaining." << std::endl;
 
-	// Fast Move Take Damage Test
+	/*// Fast Move Take Damage Test
 	std::cout << '\n' << "Fast Move Take Damage Test:" << std::endl;
 	std::cout << bulbasaur.getName() << " has " << bulbasaur.getHP() << " HP." << std::endl;
 	std::cout << charizard.getName() << " will now attack " << bulbasaur.getName();
 	std::cout << " with " << wing_attack.getName() << std::endl;
-	//apple.takeDamage(wing_attack, bulbasaur, charizard);
-	//TEST NOT WORKING
+	*/
+
 
 	// Building Energy Test
 	std::cout << '\n' << "Building Energy Test:" << std::endl;
@@ -195,10 +197,8 @@ int main()
             pikachu.raiseCurrentEnergy(thunder_shock);
         }
     std::cout<< pikachu.getName()<<" has " << pikachu.getCurrentEnergy() << " energy." << std::endl;
-    std::cout<<pikachu.getName() << " powered " <<
-    discharge.getName() <<" to attack " << charmander.getName() <<std::endl;
-  //banana.takeDamage(discharge, apple, charmander ,pikachu);
-  //TEST NOT WOKRING
+    std::cout<<pikachu.getName() << " used " << discharge.getName() <<" to attack " << charmander.getName() <<std::endl;
+
     pikachu.decreaseCurrentEnergy(discharge);
     std::cout<< pikachu.getName()<<" has " << pikachu.getCurrentEnergy() << " energy." << std::endl;
     //end ashley's code
